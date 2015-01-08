@@ -24,6 +24,7 @@ class TrapsController < ApplicationController
     end
   end
   def show_requests
+    @trap_id = params[:trap_id]
     @requests = Request.where('traps_id = ?', Trap.where('trap_id = ?', params[:trap_id]).first.id)
   end
   def show

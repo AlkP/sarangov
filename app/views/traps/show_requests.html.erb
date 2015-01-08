@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row clearfix">
     <div class="col-md-12 column">
-
+      <h1><%= @trap_id %></h1>
       <table class="table">
         <thead>
         <tr>
@@ -34,7 +34,7 @@
               <%= element %>
             </td>
             <td>
-              <%= link_to request.id, '/'+Trap.find(request.traps_id).trap_id+'/requests/'+request.id.to_s %>
+              <%= link_to request.id, '/'+@trap_id+'/requests/'+request.id.to_s %>
             </td>
             <td>
               <%= request.remote_ip %>
