@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150108131758) do
+ActiveRecord::Schema.define(version: 20150108135741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "requests", force: true do |t|
+    t.integer  "traps_id"
+    t.string   "remote_ip"
+    t.string   "request_method"
+    t.string   "scheme"
+    t.text     "query_string"
+    t.text     "query_params"
+    t.text     "cookies"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "traps", force: true do |t|
     t.string   "trap_id"
