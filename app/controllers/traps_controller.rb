@@ -23,4 +23,10 @@ class TrapsController < ApplicationController
       format.html
     end
   end
+  def show_requests
+    @requests = Request.where('traps_id = ?', Trap.where('trap_id = ?', params[:trap_id]).first.id)
+  end
+  def show
+    @request = Request.find(params[:id])
+  end
 end

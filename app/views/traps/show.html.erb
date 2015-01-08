@@ -1,0 +1,53 @@
+<br><br>
+<%= link_to 'Back', '/'+Trap.find(@request.traps_id).trap_id+'/requests' %>
+<br><br>
+<div class="container">
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label for="traps_id" class="col-sm-2 control-label">traps_id</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="traps_id" value="<%= @request.traps_id %>" disabled />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="remote_ip" class="col-sm-2 control-label">remote_ip</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="remote_ip" value="<%= @request.remote_ip %>" disabled />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="request_method" class="col-sm-2 control-label">request_method</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="request_method" value="<%= @request.request_method %>" disabled />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="scheme" class="col-sm-2 control-label">scheme</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="scheme" value="<%= @request.scheme %>" disabled />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="query_string" class="col-sm-2 control-label">query_string</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="query_string" value="<%= @request.query_string %>" disabled />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="query_params" class="col-sm-2 control-label">query_params</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="query_params" value="<%= @request.query_params %>" disabled />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cookies" class="col-sm-2 control-label">cookies</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="cookies" value="<%= @request.cookies %>" disabled />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

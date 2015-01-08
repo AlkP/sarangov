@@ -1,0 +1,55 @@
+<br><br>
+<%= link_to 'Main', '/' %>
+<br><br>
+<div class="container">
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+
+      <table class="table">
+        <thead>
+        <tr>
+          <th>
+            #
+          </th>
+          <th>
+            request_id
+          </th>
+          <th>
+            remote_ip
+          </th>
+          <th>
+            request_method
+          </th>
+          <th>
+            scheme
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <% element = 0 %>
+        <% @requests.each do |request| %>
+          <% element += 1 %>
+          <tr class="<% if (element % 2).zero? %>active<% end %>">
+            <td>
+              <%= element %>
+            </td>
+            <td>
+              <%= link_to request.id, '/'+Trap.find(request.traps_id).trap_id+'/requests/'+request.id.to_s %>
+            </td>
+            <td>
+              <%= request.remote_ip %>
+            </td>
+            <td>
+              <%= request.request_method %>
+            </td>
+            <td>
+              <%= request.scheme %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
