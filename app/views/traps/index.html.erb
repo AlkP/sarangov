@@ -1,0 +1,51 @@
+<br><br>
+<div class="container">
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      | / # splash page with some instructions<br>
+      | /:trap_id # send requests to be captured here<br>
+      | /:trap_id/requests # display requests here<br>
+      | /:trap_id/requests/:id # display a single request here<br>
+    </div>
+  </div>
+  <br><br>
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      Any request [POST, PUT, GET, DELETE, ...] made to /:trap_id will be<br>
+      saved in the db and displayed in /:trap_id/requests
+    </div>
+  </div>
+  <br><br>
+  <% if @traps.length > 0 %>
+    <div class="row clearfix">
+    <div class="col-md-12 column">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>
+            #
+          </th>
+          <th>
+            trap_id
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <% element = 0 %>
+        <% @traps.each do |trap| %>
+            <% element += 1 %>
+            <tr class="<% if (element % 2).zero? %>active<% end %>">
+              <td>
+                <%= element %>
+              </td>
+              <td>
+                <a href="/<%= trap.trap_id %>/requests"><%= trap.trap_id %></a>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <% end %>
+</div>
